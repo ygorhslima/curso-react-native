@@ -1,6 +1,7 @@
-import {useState} from "react"
-import { View, Text, TextInput, Button } from "react-native"
-import ResultIMC from "./ResultIMC"
+import {useState} from "react";
+import { View, Text, TextInput, TouchableOpacity, Keyboard } from "react-native";
+import ResultIMC from "./resultImc";
+import styleForm from "./styleForm";
 
 export default function Form(){
     const [height,setHeight] = useState(null); // altura
@@ -10,7 +11,7 @@ export default function Form(){
     const [textButton,setTextButton] = useState("Calcular");
 
     function imcCalculador(){
-        return setImc(weight / (height * height)).toFixed(2);
+        return setImc(weight / (height * height));
     }
 
     function validationImc(){
@@ -28,25 +29,29 @@ export default function Form(){
     }
 
     return(
-        <View>
-            <View>
-                <Text>Altura</Text>
+        <View style={styleForm.formContext}>
+            <View style={styleForm.form}>
+                <Text style={styleForm.formLabel}>Altura</Text>
                 <TextInput 
+                    style={styleForm.formInput}
                     onChangeText={setHeight}
                     value={height}
                     placeholder="Ex. 1.75"
                     keyboardType="numeric"
                 />
 
-                <Text>Peso</Text>
+                <Text style={styleForm.formLabel}>Peso</Text>
                 <TextInput 
+                    style={styleForm.formInput} 
                     onChangeText={setWeight}
                     value={weight} 
                     placeholder="Ex. 72.6kg" 
                     keyboardType="numeric" 
                 />
-                
-                <Button onPress={()=>{validationImc()}} title={textButton}/>
+            
+                <TouchableOpacity style={styleForm.buttonCalculador} onPress={()=>{validationImc()}}>
+                    <Text style={styleForm.textButtonCalculator}>{textButton}</Text>
+                </TouchableOpacity>
             </View>
             <ResultIMC messageResultImc={messageImc} resultImc={imc}/>
         </View>
