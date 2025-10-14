@@ -4,18 +4,18 @@ const styleForm = StyleSheet.create({
     formContext:{
         width:"100%",
         height:"100%",
+        justifyContent:"space-around",
         bottom:0,
         backgroundColor:"#ffffff",
         alignItems:"center",
-        marginTop:30,
         borderTopLeftRadius:30,
-        borderTopRightRadius:30
+        borderTopRightRadius:30,
+        marginTop:20,
+        paddingTop:30
     },
     form:{
         width:"100%",
         height:"auto",
-        marginTop:30,
-        padding:10
     },
     formLabel:{
         color:"#000000",
@@ -44,6 +44,16 @@ const styleForm = StyleSheet.create({
     textButtonCalculator:{
         fontSize:20,
         color:"#fff"
+    },
+    errorMessage:{
+        fontSize:12,
+        color:'red',
+        fontWeight:"bold",
+        paddingLeft:20,        
+    },
+    exibitionResultImc:{
+        width:"100%",
+        height:"50%"
     }
 })
 export default styleForm
