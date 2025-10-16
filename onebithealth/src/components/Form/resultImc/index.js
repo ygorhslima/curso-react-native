@@ -11,15 +11,13 @@ export default function ResultIMC({messageResultImc,resultImc}){
 
     return(
         <View style={styleResultImc.contextImc}>
-            <View style={styleResultImc.boxShareButton}>
-                {resultImc != null ?
-                    <TouchableOpacity style={styleResultImc.shared}>
-                        <Text style={styleResultImc.sharedText}>Share</Text>
-                    </TouchableOpacity>
-                :<View></View>}
-            </View>
             <Text style={styleResultImc.titleResultImc}>{messageResultImc}</Text>
             <Text style={styleResultImc.numberImc}>{resultImc}</Text>
+            <View style={styleResultImc.boxShareButton}>
+                <TouchableOpacity onPress={onShare} style={styleResultImc.shared}>
+                    <Text style={styleResultImc.sharedText}>Share</Text>
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }

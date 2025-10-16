@@ -79,7 +79,7 @@ export default function Form(){
                     </TouchableOpacity>
                 </Pressable>
             ):(
-                <View style={style.exibitionResultImc}>
+                <View style={styleForm.exibitionResultImc}>
                     <ResultIMC messageResultImc={messageImc} resultImc={imc}/>
                      <TouchableOpacity style={styleForm.buttonCalculador} onPress={validationImc}>
                         <Text style={styleForm.textButtonCalculator}>{textButton}</Text>
