@@ -1,4 +1,4 @@
-import {View, Text, TouchableOpacity, Share, ProgressBarAndroidComponent} from "react-native"
+import {View, Text, TouchableOpacity, Share} from "react-native"
 import styleResultImc from "./styleResultImc"
 export default function ResultIMC({messageResultImc,resultImc}){
 

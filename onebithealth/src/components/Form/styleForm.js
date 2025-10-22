@@ -15,7 +15,7 @@ const styleForm = StyleSheet.create({
     },
     form:{
         width:"100%",
-        height:"auto",
+        height:"100%",
     },
     formLabel:{
         color:"#000000",
